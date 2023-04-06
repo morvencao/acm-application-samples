@@ -3,11 +3,12 @@ apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleJob
 metadata:
   name: service-now-ticket-demo
-  namespace: nginx-pre-test
+  labels:
+    app.kubernetes.io/name: pacman
 spec:
   tower_auth_secret: toweraccess
-  job_template_name: Service now App Update
+  job_template_name: snow-create-change-request
   extra_vars:
+    app_name: pacman-ansible-demo
     sn_severity: 3
     sn_priority: 3
-    appName: pacman-ansible-demonstration
