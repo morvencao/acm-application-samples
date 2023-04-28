@@ -1,0 +1,11 @@
+---
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleJob
+metadata:
+  name: microshift-testing
+  labels:
+    app.kubernetes.io/name: microshift
+spec:
+  tower_auth_secret: toweraccess
+  job_template_name: microshift-template
+  extra_vars: {}
